@@ -1,6 +1,6 @@
 #include<LiquidCrystal.h>
 
-LiquidCrystal lcd(8,9,10,11,12,13); //initalize LCD
+LiquidCrystal lcd(13,12,8,9,10,11); //initalize LCD
 
 const int interruptPinQuarter = 2; 
 const int interruptPinDime = 3;
@@ -39,20 +39,22 @@ void displayLCD(){
   lcd.print(sum);
 }
 void brokenQuarter(){
-  sum += 25;
   delay(500);
+  sum += 25;
+  Serial.println("Break - Quarter");
 }
 void brokenDime(){
-  sum += 10;
   delay(500);
+  sum += 10;
+  Serial.println("Break - Dime");
 }
 void brokenNickel(){
-  sum += 5;
   delay(500);
+  sum += 5;
+  Serial.println("Break - Nickel");
 }
 void brokenPenny(){
-  sum += 1;
   delay(500);
+  sum += 1;
+  Serial.println("Break - Penny");
 }
-
-
